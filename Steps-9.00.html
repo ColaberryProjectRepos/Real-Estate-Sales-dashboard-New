@@ -123,3 +123,128 @@ minor-latin;mso-fareast-font-family:&quot;Times New Roman&quot;;mso-fareast-them
 minor-fareast;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:&quot;Times New Roman&quot;;
 mso-ansi-language:EN-US;mso-fareast-language:EN-US;mso-bidi-language:AR-SA"></span><font color="#0000ff" face="Calibri, sans-serif"><span style="font-size: 16px;">Soft Crylic</span></font></p>
 
+
+Create Date table
+9
+<p class="MsoNormal" style="margin-bottom: 7.5pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size: 14pt; font-family: &quot;Times New Roman&quot;, serif;">Use the following to
+create the date table:</span></b><br></p>
+
+<p class="MsoNormal" style="margin-bottom: 7.5pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size: 14pt; font-family: &quot;Times New Roman&quot;, serif;">Date Dax</span></b><b><span style="font-size:14.0pt;font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;"><o:p></o:p></span></b></p>
+
+<p class="MsoNormal" style="margin-bottom: 7.5pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><span style="font-size: 9pt; font-family: Consolas;">Date = </span><span style="font-size:9.0pt;font-family:Consolas;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:#3165BB">ADDCOLUMNS</span><span style="font-size: 9pt; font-family: Consolas;"> (</span><span style="font-size:15.0pt;font-family:&quot;Lato&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:#767676"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-size: 9pt; font-family: Consolas;">&nbsp;</span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-size:9.0pt;font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#3165BB">CALENDAR</span><span style="font-size: 9pt; font-family: Consolas;"> (</span><span style="font-size:9.0pt;font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#3165BB">Min</span><span style="font-size: 9pt; font-family: Consolas;"> (‘Real_Estate_Sales_2001-2019_GL'[Date
+Recorded]), </span><span style="font-size:9.0pt;font-family:Consolas;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:#3165BB">MAX</span><span style="font-size: 9pt; font-family: Consolas;">('Real_Estate_Sales_2001-2019_GL'[Date Recorded])),<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-size: 9pt; font-family: Consolas;">&nbsp;</span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-size:9.0pt;font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#A31515">"Datacenter"</span><span style="font-size: 9pt; font-family: Consolas;">, </span><span style="font-size:9.0pt;font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#3165BB">FORMAT</span><span style="font-size: 9pt; font-family: Consolas;"> ([Date], </span><span style="font-size:9.0pt;font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#A31515">"YYYYMMDD”)</span><span style="font-size: 9pt; font-family: Consolas;">,<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-size: 9pt; font-family: Consolas;">&nbsp;</span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-size:9.0pt;font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#A31515">"Year"</span><span style="font-size: 9pt; font-family: Consolas;">, </span><span style="font-size:9.0pt;font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#3165BB">YEAR</span><span style="font-size: 9pt; font-family: Consolas;"> ([Date]),<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-size: 9pt; font-family: Consolas;">&nbsp;</span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-size:9.0pt;font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#A31515">"Month number"</span><span style="font-size: 9pt; font-family: Consolas;">, </span><span style="font-size:9.0pt;font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#3165BB">FORMAT</span><span style="font-size: 9pt; font-family: Consolas;"> ([Date], </span><span style="font-size:9.0pt;font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#A31515">"MM”)</span><span style="font-size: 9pt; font-family: Consolas;">,<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-size: 9pt; font-family: Consolas;">&nbsp;</span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-size:9.0pt;font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#A31515">"Year Month number"</span><span style="font-size: 9pt; font-family: Consolas;">, </span><span style="font-size:9.0pt;font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#3165BB">FORMAT</span><span style="font-size: 9pt; font-family: Consolas;"> ([Date], </span><span style="font-size:9.0pt;font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#A31515">"YYYY/MM”)</span><span style="font-size: 9pt; font-family: Consolas;">,<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-size: 9pt; font-family: Consolas;">&nbsp;</span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-size:9.0pt;font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#A31515">"YearMonthShort"</span><span style="font-size: 9pt; font-family: Consolas;">, </span><span style="font-size:9.0pt;font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#3165BB">FORMAT</span><span style="font-size: 9pt; font-family: Consolas;"> ([Date], </span><span style="font-size:9.0pt;font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#A31515">"YYYY/mmm”)</span><span style="font-size: 9pt; font-family: Consolas;">,<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-size: 9pt; font-family: Consolas;">&nbsp;</span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-size:9.0pt;font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#A31515">"MonthNameShort"</span><span style="font-size: 9pt; font-family: Consolas;">, </span><span style="font-size:9.0pt;font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#3165BB">FORMAT</span><span style="font-size: 9pt; font-family: Consolas;"> ([Date], </span><span style="font-size:9.0pt;font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#A31515">"mmm”)</span><span style="font-size: 9pt; font-family: Consolas;">,<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-size: 9pt; font-family: Consolas;">&nbsp;</span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-size:9.0pt;font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#A31515">"MonthNameLong"</span><span style="font-size: 9pt; font-family: Consolas;">, </span><span style="font-size:9.0pt;font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#3165BB">FORMAT</span><span style="font-size: 9pt; font-family: Consolas;"> ([Date], </span><span style="font-size:9.0pt;font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#A31515">"mmmm”)</span><span style="font-size: 9pt; font-family: Consolas;">,<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-size: 9pt; font-family: Consolas;">&nbsp;</span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-size:9.0pt;font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#A31515">"DayOfWeekNumber"</span><span style="font-size: 9pt; font-family: Consolas;">, </span><span style="font-size:9.0pt;font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#3165BB">WEEKDAY</span><span style="font-size: 9pt; font-family: Consolas;"> ([Date]),<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-size: 9pt; font-family: Consolas;">&nbsp;</span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-size:9.0pt;font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#A31515">"Day of Week"</span><span style="font-size: 9pt; font-family: Consolas;">, </span><span style="font-size:9.0pt;font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#3165BB">FORMAT</span><span style="font-size: 9pt; font-family: Consolas;"> ([Date], </span><span style="font-size:9.0pt;font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#A31515">"dddd”)</span><span style="font-size: 9pt; font-family: Consolas;">,<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-size: 9pt; font-family: Consolas;">&nbsp;</span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-size:9.0pt;font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#A31515">"DayOfWeekShort"</span><span style="font-size: 9pt; font-family: Consolas;">, </span><span style="font-size:9.0pt;font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#3165BB">FORMAT</span><span style="font-size: 9pt; font-family: Consolas;"> ([Date], </span><span style="font-size:9.0pt;font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#A31515">"ddd”)</span><span style="font-size: 9pt; font-family: Consolas;">,<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-size: 9pt; font-family: Consolas;">&nbsp;</span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-size:9.0pt;font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#A31515">"Quarter"</span><span style="font-size: 9pt; font-family: Consolas;">, </span><span style="font-size:9.0pt;font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#A31515">"Q"</span><span style="font-size: 9pt; font-family: Consolas;"> &amp; </span><span style="font-size:9.0pt;font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#3165BB">FORMAT</span><span style="font-size: 9pt; font-family: Consolas;"> ([Date], </span><span style="font-size:9.0pt;font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#A31515">"Q”)</span><span style="font-size: 9pt; font-family: Consolas;">,<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-size: 9pt; font-family: Consolas;">&nbsp;</span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-size:9.0pt;font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#A31515">"Year Quarter"</span><span style="font-size: 9pt; font-family: Consolas;">, </span><span style="font-size:9.0pt;font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#3165BB">FORMAT</span><span style="font-size: 9pt; font-family: Consolas;"> ([Date], </span><span style="font-size:9.0pt;font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#A31515">"YYYY”)</span><span style="font-size: 9pt; font-family: Consolas;"> &amp; </span><span style="font-size:9.0pt;font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#A31515">"/Q"</span><span style="font-size: 9pt; font-family: Consolas;"> &amp; </span><span style="font-size:9.0pt;font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#3165BB">FORMAT</span><span style="font-size: 9pt; font-family: Consolas;"> ([Date], </span><span style="font-size:9.0pt;font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#A31515">"Q"</span><span style="font-size: 9pt; font-family: Consolas;"> )<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-size: 9pt; font-family: Consolas;">&nbsp;</span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-size: 9pt; font-family: Consolas;">)<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-size: 9pt; font-family: Consolas;">&nbsp;</span></p>
+
+<p class="MsoNormal"><span style="font-family: Lato, sans-serif; color: rgb(118, 118, 118); background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">&nbsp;</span><img src="https://app.colaberry.com/uploads/ProjectStepsImages/1096/3/1.gif" style="width: 100%;"></p><p class="MsoNormal"><span style="font-family: Lato, sans-serif; color: rgb(118, 118, 118); background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><br></span></p><p class="MsoNormal"><span style="font-family: Lato, sans-serif; color: rgb(118, 118, 118); background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><br></span></p><p class="MsoNormal"><span style="font-family: Lato, sans-serif; color: rgb(118, 118, 118); background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><br></span></p>
+
+<p><p class="MsoNormal" style="margin-bottom:7.5pt"><span style="font-size:14.0pt;
+font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:&quot;Times New Roman&quot;"><br></span></p><p class="MsoNormal" style="margin-bottom:7.5pt"><span style="font-size:14.0pt;
+font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:&quot;Times New Roman&quot;">Power
+BI for Beginners: How to create a Date Table in Power BI<o:p></o:p></span></p>
+
+<a href="https://www.softcrylic.com/blogs/power-bi-for-beginners-how-to-create-a-date-table-in-power-bi/" target="_blank">Power Bi for Beginners: How to create a Date Table in PowerBi -&nbsp;</a><span style="font-size:12.0pt;font-family:&quot;Calibri&quot;,sans-serif;mso-ascii-theme-font:
+minor-latin;mso-fareast-font-family:&quot;Times New Roman&quot;;mso-fareast-theme-font:
+minor-fareast;mso-hansi-theme-font:minor-latin;mso-bidi-font-family:&quot;Times New Roman&quot;;
+mso-ansi-language:EN-US;mso-fareast-language:EN-US;mso-bidi-language:AR-SA"></span><font color="#0000ff" face="Calibri, sans-serif"><span style="font-size: 16px;">Soft Crylic</span></font></p>
+
