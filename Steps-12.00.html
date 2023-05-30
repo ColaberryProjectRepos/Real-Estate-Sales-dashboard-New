@@ -300,3 +300,305 @@ Bi </span><span style="font-family:&quot;Times New Roman&quot;,serif"><o:p></o:p
 
 </a><u><span style="color:blue"><o:p></o:p></span></u></p><p class="MsoNormal"><a href="https://www.recastsoftware.com/resources/how-to-add-the-last-refreshed-date-and-time-to-a-power-bi-report/" target="_blank">How to Add the Last Refreshed Date and Time to a Power BIReport - Recast Software</a><b><o:p></o:p></b></p>
 
+
+Creating DAX measures and Refresh Date
+12
+<p class="MsoNormal" style="background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><span style="font-family:&quot;Lato&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:#9C00FF"><br></span></p><p class="MsoNormal" style="background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><span style="font-family:&quot;Lato&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:#9C00FF">Step 1</span><span style="font-family:&quot;Lato&quot;,sans-serif;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#767676"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><span style="font-family:&quot;Helvetica&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:#767676">&nbsp;</span><span style="font-family:&quot;Lato&quot;,sans-serif;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#767676"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height: 22.5pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><span style="font-family: Helvetica, sans-serif;">Create a DAX Measure follow these steps:</span><span style="font-family:&quot;Lato&quot;,sans-serif;mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoListParagraphCxSpFirst" style="margin-left: 1in; text-indent: -0.25in; line-height: 22.5pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><!--[if !supportLists]--><span style="font-family:&quot;Lato&quot;,sans-serif;mso-fareast-font-family:Lato;mso-bidi-font-family:
+Lato">1.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><!--[endif]--><span style="font-family: &quot;Times New Roman&quot;, serif;">Select</span><span style="font-family: Helvetica, sans-serif;"> the table “Measure”</span><span style="font-family:&quot;Lato&quot;,sans-serif;mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-left: 1in; text-indent: -0.25in; line-height: 22.5pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><!--[if !supportLists]--><span style="font-family:&quot;Lato&quot;,sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato">2.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp; </span></span><!--[endif]--><span style="font-family: &quot;Times New Roman&quot;, serif;">Right</span><span style="font-family: Helvetica, sans-serif;"> Click and select New Measure</span><span style="font-family:&quot;Lato&quot;,sans-serif;mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoListParagraphCxSpLast" style="margin-left: 1in; text-indent: -0.25in; line-height: 22.5pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><!--[if !supportLists]--><span style="font-family:&quot;Lato&quot;,sans-serif;mso-fareast-font-family:Lato;mso-bidi-font-family:
+Lato">3.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><!--[endif]--><span style="font-family: &quot;Times New Roman&quot;, serif;">Write</span><span style="font-family: Helvetica, sans-serif;"> the following DAX Measures on the space
+provide one at a time and click&nbsp;</span><span style="font-family: &quot;Segoe UI Emoji&quot;, sans-serif;">the
+right mark</span><span style="font-family:&quot;Lato&quot;,sans-serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><b><span style="font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:&quot;Times New Roman&quot;">Sales
+Per MTh</span></b><span style="font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;"> = CALCULATE (SUM ('Real_Estate_Sales'[Sale Amount]),</span><span style="font-family:&quot;Arial&quot;,sans-serif;mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><span style="font-family:
+&quot;Times New Roman&quot;,serif;mso-fareast-font-family:&quot;Times New Roman&quot;">FILTER
+('Real_Estate_Sales', MONTH('Real_Estate_Sales'[Date])))</span><span style="font-family:&quot;Arial&quot;,sans-serif;mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal"><b><span style="font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:&quot;Times New Roman&quot;">Sales
+MOM%</span></b><span style="font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;"> =IF(ISFILTERED('Real_Estate_Sales'[Date]),</span><span style="font-family:&quot;Arial&quot;,sans-serif;mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-family: &quot;Times New Roman&quot;, serif;">ERROR ("Time intelligence quick
+measures can only be </span><span style="font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-family: &quot;Times New Roman&quot;, serif;">&nbsp;Grouped
+or filtered by the Power BI-provided date hierarchy or </span><span style="font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-family: &quot;Times New Roman&quot;, serif;">Primary date column."),</span><span style="font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-family: &quot;Times New Roman&quot;, serif;">DIVIDE (</span><span style="font-family:
+&quot;Times New Roman&quot;,serif;mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-family: &quot;Times New Roman&quot;, serif;">SUM ('Real_Estate_Sales'[Sale Amount]) -
+CALCULATE(</span><span style="font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="mso-line-height-alt:13.5pt;background:#FFFFFE"><b><span style="font-size:16.0pt;mso-no-proof:yes">&nbsp;</span></b></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-family: &quot;Times New Roman&quot;, serif;">SUM ('Real_Estate_Sales'[Sale Amount]),</span><span style="font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-family: &quot;Times New Roman&quot;, serif;">DATEADD('Real_Estate_Sales'[Date].[Date],
+-1, MONTH)),</span><span style="font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-family: &quot;Times New Roman&quot;, serif;">CALCULATE (</span><span style="font-family:
+&quot;Times New Roman&quot;,serif;mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-family: &quot;Times New Roman&quot;, serif;">SUM ('Real_Estate_Sales'[Sale Amount]),</span><span style="font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-family: &quot;Times New Roman&quot;, serif;">DATEADD('Real_Estate_Sales'[Date].[Date],
+-1, MONTH))))</span><span style="font-family:&quot;Times New Roman&quot;,serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-family: Consolas;">Sales = </span><span style="font-family:Consolas;mso-fareast-font-family:
+&quot;Times New Roman&quot;;color:#3165BB">CALCULATE</span><span style="font-family: Consolas;"> (</span><span style="font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#3165BB">SUM</span><span style="font-family: Consolas;">(</span><span style="font-family:Consolas;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:#001080">'Real_Estate_Sales'[Sale
+Amount]</span><span style="font-family: Consolas;">),</span><span style="font-family:Consolas;mso-fareast-font-family:
+&quot;Times New Roman&quot;;color:#3165BB">DATEADD</span><span style="font-family: Consolas;">(</span><span style="font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#001080">'Real_Estate_Sales'[Date Recorded]</span><span style="font-family: Consolas;">,-</span><font color="#09885a" face="Consolas">1, MONTH</font><font face="Consolas">))</font><font face="Consolas"><o:p></o:p></font></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-family: Consolas;">Sales MOM = </span><span style="font-family:Consolas;mso-fareast-font-family:
+&quot;Times New Roman&quot;;color:#001080">'Measure'</span><span style="font-family:Consolas;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:#68349C">[total sales]</span><span style="font-family: Consolas;">-</span><span style="font-family:Consolas;mso-fareast-font-family:
+&quot;Times New Roman&quot;;color:#001080">'Measure'</span><span style="font-family:Consolas;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:#68349C">[saleslm]</span><span style="font-family: Consolas;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-family: Consolas;">&nbsp;</span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:&quot;Times New Roman&quot;">&nbsp;</span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><b><span style="font-family: &quot;Times New Roman&quot;, serif;">Sales YOY%</span></b><span style="font-family: &quot;Times New Roman&quot;, serif;"> =IF(</span><span style="font-family:
+&quot;Times New Roman&quot;,serif;mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-family: &quot;Times New Roman&quot;, serif;">ISFILTERED('Real_Estate_Sales'[Date]),</span><span style="font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-family: &quot;Times New Roman&quot;, serif;">ERROR ("Time intelligence quick
+measures can </span><span style="font-family:&quot;Times New Roman&quot;,serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-family: &quot;Times New Roman&quot;, serif;">Only be grouped or filtered by</span><i><span style="font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></i></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><i><span style="font-family: &quot;Times New Roman&quot;, serif;">&nbsp;The
+Power BI-provided date hierarchy or primary date column."),</span></i><i><span style="font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></i></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><i><span style="font-family: &quot;Times New Roman&quot;, serif;">DIVIDE (</span></i><i><span style="font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></i></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><i><span style="font-family: &quot;Times New Roman&quot;, serif;">SUM ('Real_Estate_Sales'[Sale Amount]) - CALCULATE
+(</span></i><i><span style="font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;"><o:p></o:p></span></i></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><i><span style="font-family: &quot;Times New Roman&quot;, serif;">SUM ('Real_Estate_Sales'[Sale Amount]),</span></i><i><span style="font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></i></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><i><span style="font-family: &quot;Times New Roman&quot;, serif;">DATEADD('Real_Estate_Sales'[Date].[Date],
+-1, YEAR)),</span></i><i><span style="font-family:&quot;Times New Roman&quot;,serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></i></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><i><span style="font-family: &quot;Times New Roman&quot;, serif;">CALCULATE (</span></i><i><span style="font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></i></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><i><span style="font-family: &quot;Times New Roman&quot;, serif;">SUM ('Real_Estate_Sales'[Sale Amount]),</span></i><i><span style="font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></i></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><i><span style="font-family: &quot;Times New Roman&quot;, serif;">DATEADD('Real_Estate_Sales'[Date].[Date],
+-1, YEAR))))</span></i><i><span style="font-family:&quot;Times New Roman&quot;,serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></i></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-family: Consolas;">SalesLy = </span><span style="font-family:Consolas;mso-fareast-font-family:
+&quot;Times New Roman&quot;;color:#3165BB">CALCULATE</span><span style="font-family: Consolas;"> (</span><span style="font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#3165BB">SUM</span><span style="font-family: Consolas;">('Real_Estate_Sales'[Sale Amount]), </span><span style="font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#3165BB">DATEADD</span><span style="font-family: Consolas;">('Real_Estate_Sales'[Date Recorded], -</span><span style="font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#09885A">1</span><span style="font-family: Consolas;">,YEAR))<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-family: Consolas;">Sales YOY = 'Measure'[total sales]-'Measure'[salesly]<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-family: Consolas;">TATOL Assessed value = </span><span style="font-family:Consolas;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:#3165BB">SUM</span><span style="font-family: Consolas;">('Real_Estate_Sales'[Assessed Value])<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-family: Consolas;">Total sales = </span><span style="font-family:Consolas;mso-fareast-font-family:
+&quot;Times New Roman&quot;;color:#3165BB">SUM</span><span style="font-family: Consolas;">(Real_Estate_Sales[Sale
+Amount])<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-family: Consolas;">&nbsp;</span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-family: Consolas;">Property tax = </span><span style="font-family:Consolas;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:#3165BB">IF</span><span style="font-family: Consolas;">(</span><span style="font-family:Consolas;mso-fareast-font-family:
+&quot;Times New Roman&quot;;color:#001080">'Measure'</span><span style="font-family:Consolas;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:#68349C">[TATOL Assessed value]</span><span style="font-family: Consolas;">&gt;=</span><span style="font-family:Consolas;mso-fareast-font-family:
+&quot;Times New Roman&quot;;color:#09885A">3000000</span><span style="font-family: Consolas;">,<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#001080">'Measure'</span><span style="font-family:Consolas;mso-fareast-font-family:
+&quot;Times New Roman&quot;;color:#68349C">[TATOL Assessed value]</span><span style="font-family: Consolas;">*</span><span style="font-family:Consolas;mso-fareast-font-family:
+&quot;Times New Roman&quot;;color:#09885A">0.19</span><span style="font-family: Consolas;">,<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-family:Consolas;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#001080">'Measure'</span><span style="font-family:Consolas;mso-fareast-font-family:
+&quot;Times New Roman&quot;;color:#68349C">[TATOL Assessed value]</span><span style="font-family: Consolas;">*</span><span style="font-family:Consolas;mso-fareast-font-family:
+&quot;Times New Roman&quot;;color:#09885A">0.15</span><span style="font-family: Consolas;">)<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><i><span style="font-family:&quot;Times New Roman&quot;,serif;mso-fareast-font-family:&quot;Times New Roman&quot;">&nbsp;</span></i></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><b><i><span style="font-family: &quot;Times New Roman&quot;, serif;">Property Tax% </span></i></b><i><span style="font-family: &quot;Times New Roman&quot;, serif;">= DIVIDE ('Real_Estate_Sales'[property
+tax],'Real_Estate_Sales'[Total sales])</span></i><i><span style="font-family:
+&quot;Times New Roman&quot;,serif;mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></i></p>
+
+<p class="MsoNormal" style="background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><b><span style="font-size:16.0pt;
+mso-no-proof:yes">&nbsp;</span></b></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-family: &quot;Times New Roman&quot;, serif;">YOY% arrow indicators = SWITCH (TRUE (),<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-family: &quot;Times New Roman&quot;, serif;">'Measure'[Sales YOY%] &lt;=0, UNICHAR
+(11167),<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-family: &quot;Times New Roman&quot;, serif;">'Measure'[Sales YOY%] &gt; 0.01, UNICHAR
+(11165)," "<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-family: &quot;Times New Roman&quot;, serif;">&nbsp;</span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-family: &quot;Times New Roman&quot;, serif;">)<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-family: &quot;Times New Roman&quot;, serif;">MOM% arrow indicators = SWITCH (TRUE (),<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-family: &quot;Times New Roman&quot;, serif;">'Measure'[Sales MOM%] &lt;=- 0.001, UNICHAR
+(11167),<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-family: &quot;Times New Roman&quot;, serif;">'Measure'[Sales MOM%]&gt; 0.001, UNICHAR
+(11165)," "<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"></v:stroke>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"></v:f>
+  <v:f eqn="sum @0 1 0"></v:f>
+  <v:f eqn="sum 0 0 @1"></v:f>
+  <v:f eqn="prod @2 1 2"></v:f>
+  <v:f eqn="prod @3 21600 pixelWidth"></v:f>
+  <v:f eqn="prod @3 21600 pixelHeight"></v:f>
+  <v:f eqn="sum @0 0 1"></v:f>
+  <v:f eqn="prod @6 1 2"></v:f>
+  <v:f eqn="prod @7 21600 pixelWidth"></v:f>
+  <v:f eqn="sum @8 21600 0"></v:f>
+  <v:f eqn="prod @7 21600 pixelHeight"></v:f>
+  <v:f eqn="sum @10 21600 0"></v:f>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"></v:path>
+ <o:lock v:ext="edit" aspectratio="t"></o:lock>
+</v:shapetype><v:shape id="Picture_x0020_30" o:spid="_x0000_s1026" type="#_x0000_t75"
+ alt="Graphical user interface, application&#10;&#10;Description automatically generated"
+ style='position:absolute;margin-left:-13.35pt;margin-top:26.2pt;width:468pt;
+ height:240.95pt;z-index:-251625472;visibility:visible;mso-wrap-style:square;
+ mso-wrap-distance-left:9pt;mso-wrap-distance-top:0;mso-wrap-distance-right:9pt;
+ mso-wrap-distance-bottom:0;mso-position-horizontal:absolute;
+ mso-position-horizontal-relative:text;mso-position-vertical:absolute;
+ mso-position-vertical-relative:text'>
+ <v:imagedata src="file:///C:/Users/ABEBEW~1/AppData/Local/Temp/msohtmlclip1/01/clip_image001.gif"
+  o:title="Graphical user interface, application&#10;&#10;Description automatically generated"></v:imagedata>
+ <w:wrap type="tight"></w:wrap>
+</v:shape><![endif]--><!--[if !vml]--><!--[endif]--><span style="font-family: &quot;Times New Roman&quot;, serif;">&nbsp;
+)</span></p><p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-family: &quot;Times New Roman&quot;, serif;"><o:p><br></o:p></span></p><p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-family: &quot;Times New Roman&quot;, serif;"><o:p><br></o:p></span><img src="https://app.colaberry.com/uploads/ProjectStepsImages/1096/6/1.gif" style="width: 100%;"></p><p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><img src="https://app.colaberry.com/uploads/ProjectStepsImages/1096/6/2.jpg" style="width: 100%;"><span style="font-family: &quot;Times New Roman&quot;, serif;"><o:p><br></o:p></span></p><p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-family: &quot;Times New Roman&quot;, serif;"><o:p><br></o:p></span></p><p class="MsoNormal" style="margin-bottom: 7.5pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><span style="font-size: 14pt; font-family: &quot;Times New Roman&quot;, serif;">Refreshed Date</span><span style="font-family:&quot;Lato&quot;,sans-serif;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#767676"><o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom: 7.5pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><span style="font-family:&quot;Helvetica&quot;,sans-serif;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#9C00FF">Steps</span><span style="font-size:15.0pt;font-family:&quot;Lato&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;;color:#767676"><o:p></o:p></span></p><p class="MsoListParagraphCxSpFirst" style="margin-bottom: 7.5pt; text-indent: -0.25in; line-height: 22.5pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><!--[if !supportLists]--><span style="font-size:15.0pt;font-family:&quot;Lato&quot;,sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato">1.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp; </span></span><!--[endif]--><span style="font-family: Wingdings;">Ø</span><span style="font-size: 7pt; font-family: &quot;Times New Roman&quot;, serif;">&nbsp;</span><span style="font-family: Helvetica, sans-serif;">Click on Transform Data found under home tab.</span><span style="font-size:15.0pt;font-family:&quot;Lato&quot;,sans-serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;"><o:p></o:p></span></p><p class="MsoListParagraphCxSpMiddle" style="margin-bottom: 7.5pt; text-indent: -0.25in; line-height: 22.5pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><!--[if !supportLists]--><span style="font-size:15.0pt;font-family:&quot;Lato&quot;,sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato">2.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp; </span></span><!--[endif]--><span style="font-family: Helvetica, sans-serif;">Click on New Source – Blank query</span><span style="font-size:15.0pt;font-family:&quot;Lato&quot;,sans-serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;"><o:p></o:p></span></p><p class="MsoListParagraphCxSpMiddle" style="margin-bottom: 7.5pt; text-indent: -0.25in; line-height: 22.5pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><!--[if !supportLists]--><span style="font-size:15.0pt;font-family:&quot;Lato&quot;,sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato">3.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp; </span></span><!--[endif]--><span style="font-family: Helvetica, sans-serif;">On the space provided write
+=DateTime.LocalNow() &amp; hit the check mark</span><span style="font-size:
+15.0pt;font-family:&quot;Lato&quot;,sans-serif;mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></p><p class="MsoListParagraphCxSpMiddle" style="margin-bottom: 7.5pt; text-indent: -0.25in; line-height: 22.5pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><!--[if !supportLists]--><span style="font-size:15.0pt;font-family:&quot;Lato&quot;,sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato">4.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp; </span></span><!--[endif]--><span style="font-family: Helvetica, sans-serif;">Then we gave a name (Data Refresh) for
+our table under the properties</span><span style="font-size:15.0pt;font-family:
+&quot;Lato&quot;,sans-serif;mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></p><p class="MsoListParagraphCxSpMiddle" style="margin-bottom: 7.5pt; text-indent: -0.25in; line-height: 22.5pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><!--[if !supportLists]--><span style="font-size:15.0pt;font-family:&quot;Lato&quot;,sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato">5.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp; </span></span><!--[endif]--><span style="font-family: Helvetica, sans-serif;">Click “To Table” found under File &amp;
+rename the column to “Date Time”</span><span style="font-size:15.0pt;
+font-family:&quot;Lato&quot;,sans-serif;mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></p><p class="MsoListParagraphCxSpMiddle" style="margin-bottom: 7.5pt; text-indent: -0.25in; line-height: 22.5pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><!--[if !supportLists]--><span style="font-size:15.0pt;font-family:&quot;Lato&quot;,sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato">6.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp; </span></span><!--[endif]--><span style="font-family: Helvetica, sans-serif;">Duplicate the actual column and rename it
+“Date”. After that go to “Transform” and under date click “Date Only”</span><span style="font-size:15.0pt;font-family:&quot;Lato&quot;,sans-serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;"><o:p></o:p></span></p><p class="MsoListParagraphCxSpMiddle" style="margin-bottom: 7.5pt; text-indent: -0.25in; line-height: 22.5pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><!--[if !supportLists]--><span style="font-size:15.0pt;font-family:&quot;Lato&quot;,sans-serif;
+mso-fareast-font-family:Lato;mso-bidi-font-family:Lato">7.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp; </span></span><!--[endif]--><span style="font-family: Helvetica, sans-serif;">Duplicate the actual column and rename it
+“Time”. Then go to transform and under Time click “Time Only”</span><span style="font-size:15.0pt;font-family:&quot;Lato&quot;,sans-serif;mso-fareast-font-family:
+&quot;Times New Roman&quot;"><o:p></o:p></span></p><p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</p><p class="MsoListParagraphCxSpLast" style="margin-bottom: 7.5pt; text-indent: -0.25in; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><!--[if !supportLists]--><span style="font-size:15.0pt;font-family:&quot;Lato&quot;,sans-serif;mso-fareast-font-family:
+Lato;mso-bidi-font-family:Lato">8.<span style="font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp; </span></span><!--[endif]--><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"></v:stroke>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"></v:f>
+  <v:f eqn="sum @0 1 0"></v:f>
+  <v:f eqn="sum 0 0 @1"></v:f>
+  <v:f eqn="prod @2 1 2"></v:f>
+  <v:f eqn="prod @3 21600 pixelWidth"></v:f>
+  <v:f eqn="prod @3 21600 pixelHeight"></v:f>
+  <v:f eqn="sum @0 0 1"></v:f>
+  <v:f eqn="prod @6 1 2"></v:f>
+  <v:f eqn="prod @7 21600 pixelWidth"></v:f>
+  <v:f eqn="sum @8 21600 0"></v:f>
+  <v:f eqn="prod @7 21600 pixelHeight"></v:f>
+  <v:f eqn="sum @10 21600 0"></v:f>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"></v:path>
+ <o:lock v:ext="edit" aspectratio="t"></o:lock>
+</v:shapetype><v:shape id="Picture_x0020_19" o:spid="_x0000_s1026" type="#_x0000_t75"
+ alt="Graphical user interface, text&#10;&#10;Description automatically generated"
+ style='position:absolute;left:0;text-align:left;margin-left:416.8pt;
+ margin-top:29.4pt;width:468pt;height:240.95pt;z-index:-251626496;visibility:visible;
+ mso-wrap-style:square;mso-wrap-distance-left:9pt;mso-wrap-distance-top:0;
+ mso-wrap-distance-right:9pt;mso-wrap-distance-bottom:0;
+ mso-position-horizontal:right;mso-position-horizontal-relative:margin;
+ mso-position-vertical:absolute;mso-position-vertical-relative:text'>
+ <v:imagedata src="file:///C:/Users/ABEBEW~1/AppData/Local/Temp/msohtmlclip1/01/clip_image001.gif"
+  o:title="Graphical user interface, text&#10;&#10;Description automatically generated"></v:imagedata>
+ <w:wrap type="tight" anchorx="margin"></w:wrap>
+</v:shape><![endif]--><!--[if !vml]--><!--[endif]--><span style="font-family: Helvetica, sans-serif;">Close
+and Apply</span></p><p class="MsoListParagraphCxSpLast" style="margin-bottom: 7.5pt; text-indent: -0.25in; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><img src="https://app.colaberry.com/uploads/ProjectStepsImages/1096/6/3.gif" style="width: 100%;"><span style="font-family: Helvetica, sans-serif;"><br></span></p><p class="MsoListParagraphCxSpLast" style="margin-bottom: 7.5pt; text-indent: -0.25in; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><span style="font-family: Helvetica, sans-serif;"><br></span></p><p class="MsoListParagraphCxSpLast" style="margin-bottom: 7.5pt; text-indent: -0.25in; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><span style="font-family: Helvetica, sans-serif;"><br></span></p><p class="MsoListParagraphCxSpLast" style="margin-bottom: 7.5pt; text-indent: -0.25in; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><span style="font-family: Helvetica, sans-serif;"><br></span></p><p class="MsoListParagraphCxSpLast" style="margin-bottom: 7.5pt; text-indent: -0.25in; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><span style="font-family: Helvetica, sans-serif;"><br></span><span style="font-size:15.0pt;font-family:&quot;Lato&quot;,sans-serif;
+mso-fareast-font-family:&quot;Times New Roman&quot;"><o:p></o:p></span></p><p class="MsoNormal" style="line-height:13.5pt;background:#FFFFFE"><span style="font-family: &quot;Times New Roman&quot;, serif;"><o:p><br></o:p></span></p>
+
+<p class="MsoNormal"><b><span style="font-size: 14pt; font-family: Lato, sans-serif; color: rgb(118, 118, 118); background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">&nbsp;</span></b><span style="font-size:14.0pt"><br></span></p><p class="MsoNormal"><span style="font-size:14.0pt">Power BI for Beginners: How
+to create DAX Calculation in Power BI<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="margin-bottom: 7.5pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><a href="https://video.search.yahoo.com/yhs/search?fr=yhs-fc-2212&amp;ei=UTF-8&amp;hsimp=yhs-2212&amp;hspart=fc&amp;param1=7&amp;param2=eJw1j9EKgzAMRX8ljxOGpq3WWT9jT0P2ULXV0mplKo59%2FSJs5CHn5t4EMri%2BqZ%2F3B0MUIhfN9TmTJsUJTwtvyPgpOhIVdbcQcIlMSeTqZkurrMxRlUhUdG2hZMW4spVsKT2YSPF9Jdw10RQ%2FLgSdFSnC5XBzH48V5g0YplgDDWRew1vmCehlCeYwrXdbVogyFRIuftymcIXgvIHBdD4m0I2vOJmMIV08C1Zt9cv9V0w%2F%2FDxG76VCfAEOekWB&amp;p=wis+owl+tutorial+dax+calculation&amp;type=fc_A30C76C6185_s58_g_e_d080122_n1002_c9#id=2&amp;vid=8aa4100c75703bf096508379683c1e2b&amp;action=view" target="_blank">wis owl tutorial dax calculation - - Video Search Results(yahoo.com)</a></p><p class="MsoNormal"><span style="font-size: 14pt; font-family: &quot;Times New Roman&quot;, serif;">How to create the refresh date table in power
+Bi </span><span style="font-family:&quot;Times New Roman&quot;,serif"><o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom: 7.5pt; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;"><a href="https://video.search.yahoo.com/yhs/search?fr=yhs-fc-2212&amp;ei=UTF-8&amp;hsimp=yhs-2212&amp;hspart=fc&amp;param1=7&amp;param2=eJw1j9EKgzAMRX8ljxOGpq3WWT9jT0P2ULXV0mplKo59%2FSJs5CHn5t4EMri%2BqZ%2F3B0MUIhfN9TmTJsUJTwtvyPgpOhIVdbcQcIlMSeTqZkurrMxRlUhUdG2hZMW4spVsKT2YSPF9Jdw10RQ%2FLgSdFSnC5XBzH48V5g0YplgDDWRew1vmCehlCeYwrXdbVogyFRIuftymcIXgvIHBdD4m0I2vOJmMIV08C1Zt9cv9V0w%2F%2FDxG76VCfAEOekWB&amp;p=wis+owl+tutorial+dax+calculation&amp;type=fc_A30C76C6185_s58_g_e_d080122_n1002_c9#id=2&amp;vid=8aa4100c75703bf096508379683c1e2b&amp;action=view">
+
+</a><u><span style="color:blue"><o:p></o:p></span></u></p><p class="MsoNormal"><a href="https://www.recastsoftware.com/resources/how-to-add-the-last-refreshed-date-and-time-to-a-power-bi-report/" target="_blank">How to Add the Last Refreshed Date and Time to a Power BIReport - Recast Software</a><b><o:p></o:p></b></p>
+
